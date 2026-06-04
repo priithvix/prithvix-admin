@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { supabase } from '../lib/supabase';
-import { Lock } from 'lucide-react';
 
 export function Login({ onLogin }: { onLogin: (session: any) => void }) {
   const [email, setEmail] = useState('');
