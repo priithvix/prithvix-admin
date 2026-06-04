@@ -1,5 +1,5 @@
 import { format } from 'date-fns';
-import { Edit2, Trash2 } from 'lucide-react';
+import { Edit2, Trash2, MessageCircle } from 'lucide-react';
 import { useState } from 'react';
 
 export interface Registration {
@@ -80,6 +80,16 @@ export function RegistrationsTable({ registrations, onEdit, onDelete }: Props) {
                 </td>
                 <td>
                   <div style={{ display: 'flex', gap: '8px' }}>
+                    <a 
+                      href={`https://wa.me/${reg.phone.replace(/\D/g, '')}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-secondary btn-icon"
+                      title="WhatsApp"
+                      style={{ color: '#25D366' }}
+                    >
+                      <MessageCircle size={16} />
+                    </a>
                     <button 
                       className="btn btn-secondary btn-icon" 
                       onClick={() => onEdit(reg)}
